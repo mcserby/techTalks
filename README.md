@@ -12,8 +12,8 @@ SourceTree - a git client with a GUI, to spare us from command line commits.
 
 A text editor for coding. I recommand Sublime Text 3.
 
-MongoDB - download the appropriate version from mongoDB site. Gogo, I'm not sure how this works with XP...
-! Important: for MongoDB to start I believe you have to create a folder structure: D:\data\db or C:\data\db . Again, not tested on Win XP. 
+MongoDB - download the appropriate version from mongoDB site
+! Important: for MongoDB to start I believe you have to create a folder structure: D:\data\db or C:\data\db .
 
 (Optional): cmder  (http://cmder.net/) - a command line tool a lot smarter than windows cmd (supports ctrl + c, ctrl + v, multiple tabs, window duplication, awesome fonts, transparency, etc. ). Set cmder.exe path in PATH variable, mine is c:\Program Files\cmder_mini\ . 
 
@@ -86,11 +86,5 @@ Another difference is the fact that we use another tool on the client called bow
 3. run "grunt clean build" - this builds the project (injects deps in index.html and creates a /dist folder with built artifacts)
 4. run "grunt serve" - this will deploy the client on your default browser. You will see it happen.
 5. Congrats! you have a running client, a running server, a running mongoDB... now start working on actual tasks!
-
-Important: 
-
-facebook login id:
-
-'facebookConfigSettings', {'appID' : '1300607189956303'}
 
 

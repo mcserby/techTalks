@@ -1,0 +1,12 @@
+<nav class="navbar">
+	<div class="container-fluid header" ng-controller="MenuCtrl">
+		<ul class="header-nav">
+			<li><a class="">Frequentis Promaton</a></li>
+			<li><a class="">My Projects</a></li>
+			<li ng-if="isAdmin()"><a class="">Create Project</a></li>
+			<li ng-if="isAdmin()"><a class="" ui-sref="">Administrate</a></li>
+		</ul>
+		<div ng-include="'/views/header/userHeader.html'"></div>
+	</div>
+</nav>
+

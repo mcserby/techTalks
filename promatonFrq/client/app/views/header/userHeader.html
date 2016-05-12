@@ -1,0 +1,10 @@
+<span id="login" class="gray-font">
+	<span class="navbar-text" ng-if="!isLoggedIn()">
+		<a class="navbar-link" ui-sref="main.login">login</a>
+		<a class="navbar-link" ui-sref="main.signUp">signUp</a>
+	</span>
+	<span class="user-header-container navbar-text" ng-if="isLoggedIn()">
+		<a class="navbar-link">{{username}}</a>
+		<a class="navbar-link" ng-click="logout()">logout</a>
+	</span>
+</span>

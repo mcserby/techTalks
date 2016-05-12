@@ -1,0 +1,30 @@
+.header-nav {
+	padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.header-nav li a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.header-nav li{
+	display: inline-block;
+    float: left;
+    cursor: pointer;
+    height: 50px;
+}
+
+.user-header-container {
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+#login {
+    float: right;
+}
+

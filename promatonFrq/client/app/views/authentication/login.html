@@ -1,0 +1,16 @@
+<div ng-controller='LoginCtrl'>
+	<div class="loginWrapper">
+		<form class="loginForm" role="form">
+			<div class="enphased" style="width:50px; margin-left:100px">Login</div>
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="username" class="form-control" style="width: 15em; display: inline;" id="username" ng-model='username' placeholder="Username or Email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" class="form-control" style="width: 15em; display: inline;" id="password" ng-model='password' placeholder="password">
+			</div>
+			<button type="submit" class="btn btn-default center-horizontally" ng-click='login()'>Submit</button>
+		</form>
+	</div>
+</div>

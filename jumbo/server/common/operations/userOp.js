@@ -30,7 +30,9 @@ module.exports.signIn = function(req, res, next){
 	validateUsername(req, res, next, function(){
     	var user = new User({
     		username: req.body.username,
-			password: req.body.password
+			password: req.body.password,
+			tokens: [],
+			roles: ['employee']
     	});
     	user.save(function(err, user) {
 			if (err) {

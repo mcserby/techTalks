@@ -1,5 +1,5 @@
 'use strict';
-angular.module('promatonFrqClient').controller('LoginCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
+angular.module('jumboClient').controller('LoginCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
 
 	$scope.username = '';
 	$scope.password = '';

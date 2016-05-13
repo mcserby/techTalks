@@ -1,7 +1,7 @@
 'use strict';
 
-var promatonFrqClient = angular
-  .module('promatonFrqClient', [
+var jumboClient = angular
+  .module('jumboClient', [
 	'ngAnimate',
 	'ngCookies',
 	'ngResource',
@@ -13,7 +13,7 @@ var promatonFrqClient = angular
 	'ngStorage'
  ])
 
-promatonFrqClient.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+jumboClient.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     $urlRouterProvider.otherwise('/main');
     

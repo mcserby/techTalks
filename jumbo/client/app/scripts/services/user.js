@@ -1,5 +1,5 @@
 'use strict';
-angular.module('promatonFrqClient').service('User', ['Config', '$q', '$http', '$localStorage', function(Config, $q, $http, $localStorage) {
+angular.module('jumboClient').service('User', ['Config', '$q', '$http', '$localStorage', function(Config, $q, $http, $localStorage) {
 
 	var loggedInUser = null;
 	// functions that will execute when user is changed

@@ -1,14 +1,5 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name clientApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the clientApp
- */
-'use strict';
-angular.module('promatonFrqClient').controller('MenuCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
+angular.module('jumboClient').controller('MenuCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
    	
    	$scope.isLoggedIn = User.isLoggedIn;
 

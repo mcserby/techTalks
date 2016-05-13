@@ -1,5 +1,5 @@
 'use strict';
-angular.module('promatonFrqClient').controller('SignUpCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
+angular.module('jumboClient').controller('SignUpCtrl', ['User', '$state', '$scope', function (User, $state, $scope) {
 
 	$scope.user = User.new();
 		

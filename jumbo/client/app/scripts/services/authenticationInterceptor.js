@@ -1,5 +1,5 @@
 'use strict';
-angular.module('promatonFrqClient').service('AuthInterceptor', ['Config', '$q', function (Config, $q) {
+angular.module('jumboClient').service('AuthInterceptor', ['Config', '$q', function (Config, $q) {
 		
 	this.request = function (config) {
 		config.headers = config.headers || {};

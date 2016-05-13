@@ -1,5 +1,5 @@
 'use strict';
-angular.module('promatonFrqClient').service('Config', ['$localStorage', function( $localStorage) {
+angular.module('jumboClient').service('Config', ['$localStorage', function( $localStorage) {
 
 	//token has to be retrieved from local storage if exists
 	var token = null;

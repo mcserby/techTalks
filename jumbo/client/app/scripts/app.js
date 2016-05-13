@@ -15,7 +15,7 @@ var jumboClient = angular
 
 jumboClient.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
-    $urlRouterProvider.otherwise('/main');
+    $urlRouterProvider.otherwise('/hello');
     
     $stateProvider
         
@@ -24,6 +24,12 @@ jumboClient.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
             url: '/main',
             templateUrl: '/views/main.html'
         })
+
+        .state('main.hello', {
+            url: '/hello',
+            templateUrl: '/views/hello/hello.html'
+        })
+
         .state('main.login', {
             url: '/login',
             templateUrl: '/views/authentication/login.html'

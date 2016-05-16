@@ -2,7 +2,7 @@
 var mongoose = require( 'mongoose'); 
 	
 // Build the connection string 
-var dbURI = 'mongodb://127.0.0.1/promatonFrq'; 
+var dbURI = 'mongodb://127.0.0.1/jumbo';
 
 // Create the database connection 
 mongoose.connect(dbURI); 

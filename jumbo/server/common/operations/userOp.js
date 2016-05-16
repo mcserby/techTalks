@@ -34,6 +34,9 @@ module.exports.signIn = function(req, res, next){
 			tokens: [],
 			roles: ['employee']
     	});
+    	if(user.username == 'bogdan'){
+    		user.roles.push('manager');
+    	}
     	user.save(function(err, user) {
 			if (err) {
 				console.log(err);
@@ -41,6 +44,21 @@ module.exports.signIn = function(req, res, next){
 			}
 			console.log('user "' + user.username + '"  created.');
 			return renewTokenAndReturn(user, res, next);
+		});
+	});
+}
+
+module.exports.search = function(req, res, next){
+	Util.authorize(req, res, next, function(user, token){
+		User.find({'username': { "$regex": req.params.matchingTemplate, "$options": 'i' }}, function(err, users) {
+			if(err){
+				console.log(err);
+				throw err;
+			}
+			res.send(200, {
+				users: users
+			});
+			return next();
 		});
 	});
 }
@@ -53,6 +71,12 @@ module.exports.me = function(req, res, next){
 			_id: user._id
 		};
 		User.findOne(filter, function(err, user) {
+			if(err || !user){
+				res.send(404, {
+					data: 'user not found'
+				});
+				return next();
+			}
 			res.send(200, {
 				user: user,
 				token: token

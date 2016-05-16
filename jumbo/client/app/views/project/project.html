@@ -1,0 +1,15 @@
+<div ng-controller="MyProjectCtrl">
+	<h3>{{project.title}}</h2>
+	<div class="row">
+	<div class="col-sm-6">
+		<button class="btn btn-default" ui-sref="main.project.addTask">Add New Task</button>
+		<div>My Tasks:</div>
+		<div ng-repeat="task in project.tasks">
+			<div ng-include="'/views/project/task.html'"></div>	
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div ui-view></div>
+	</div>
+	</div>
+</div>

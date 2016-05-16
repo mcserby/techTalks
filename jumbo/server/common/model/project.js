@@ -3,7 +3,8 @@ var Schema   = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
 var ProjectSchema = new Schema({
-	projectTitle: String,
+	title: String,
+	managedBy: {type: ObjectId, ref: 'User'},
 	members: [{type: ObjectId, ref: 'User'}],
 	tasks: [{type: ObjectId, ref: 'Task'}]
 });

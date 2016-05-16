@@ -5,7 +5,7 @@ var ObjectId = Schema.ObjectId;
 var UserSchema = new Schema({
 	username: String,
 	password: String,
-	roles: [Number],
+	roles: [String],
 	tokens: [String]
 });
 

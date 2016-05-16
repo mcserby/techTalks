@@ -1,0 +1,33 @@
+<div ng-controller="AddTaskCtrl">
+	<h3>Add new task</h3>
+	<form role="form">
+			<div class="form-group">
+				<label for="type">type:</label>
+				<input type="title" class="form-control" style="width: 20em; display: inline;" id="title" ng-model='task.type' placeholder="task type">
+			</div>
+			<div class="form-group">
+				<label for="text">text:</label>
+				<textarea class="form-control" style="width: 30em; display: inline;" rows="4" ng-model='task.text' placeholder="task text"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="fromHours">from Hours:</label>
+				<input class="form-control" style="width: 5em; display: inline;" ng-model='task.fromHours' placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="to Hours">to Hours:</label>
+				<input class="form-control" style="width: 5em; display: inline;" ng-model='task.toHours' placeholder="">
+			</div>
+			<div class="form-group" style="width: 20em;">
+				<label for="date">date:</label>
+				<p class="input-group">
+					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="task.date" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+					<span  class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</p>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-default" ng-click="addNewTask()">Insert</button>
+			</div>
+	</form>
+</div>

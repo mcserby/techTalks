@@ -1,0 +1,25 @@
+<div ng-controller="CreateNewProjectCtrl">
+	<h2>create new project</h2>
+	<form role="form">
+		<div class="form-group">
+			<label for="title">Project Title:</label>
+			<input type="title" class="form-control" style="width: 70em; display: inline;" id="title" ng-model='project.title' placeholder="project title">
+		</div>
+		<div ng-repeat="m in project.members">
+			<div class="form-group">
+				<label for="member">Member:</label>
+				<span>{{m.username}}</span>
+			</div>
+		</div>
+		<input ng-show="addNewMember" type="text" style="width: 20em; display: inline;"  ng-model="newMemberUsername" id="member" placeholder="member username" uib-typeahead="username for username in loadUsers($viewValue)" typeahead-loading="loadingUsers" typeahead-no-results="noUsersFound" class="form-control"><button ng-show="addNewMember" class="btn btn-default" ng-click="appendMember()">Add Member</button>
+		<i ng-show="loadingUsers" class="glyphicon glyphicon-refresh"></i>
+	    <div ng-show="noUsersFound">
+	      <i class="glyphicon glyphicon-remove"></i> No Results Found
+	    </div>
+		<button class="addButton" ng-click="addNewMember = true">+</button>
+		<button class="removeButton" ng-click="removeProjectMember()">-</button>
+		<div>
+			<button type="submit" class="btn btn-default" ng-click="createNewProject()">Insert</button>
+		</div>
+	</form>
+</div>

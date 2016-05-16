@@ -132,6 +132,22 @@ angular.module('jumboClient').service('User', ['Config', '$q', '$http', '$localS
 		return deferred.promise;
 	}
 
+	this.search = function(searchString){
+		var deferred = $q.defer();
+		$http({
+			method: 'GET',
+			url: 'http://localhost:3000/users',
+			params: {matchingTemplate: searchString}
+		}).then(function successCallback(response) {
+			deferred.resolve(response.data.users);
+		},
+		function errorCallback(error) {
+			console.log(error);
+			deferred.reject(error);
+		});
+		return deferred.promise;
+	}
+
 	this.getUsername = function(){
 		return loggedInUser.username;
 	}
@@ -152,11 +168,11 @@ angular.module('jumboClient').service('User', ['Config', '$q', '$http', '$localS
 		return loggedInUser !== null;
 	}
 
-	this.isAdmin = function(){
+	this.isManager = function(){
 		if(!this.isLoggedIn()){
 			return false;
 		}
-		return loggedInUser.roles.filter(function(r){return r === 0;}).length !== 0;
+		return loggedInUser.roles.filter(function(r){return r == 'manager';}).length !== 0;
 	}
 
 }]);

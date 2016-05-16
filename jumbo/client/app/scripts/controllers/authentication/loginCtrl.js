@@ -9,7 +9,7 @@ angular.module('jumboClient').controller('LoginCtrl', ['User', '$state', '$scope
 	// normal login, with user credentials
 	$scope.login = function(){
 		var loginPromise = User.login($scope.username, $scope.password).then(function(success){
-			$state.transitionTo('main');
+			$state.transitionTo('main.hello');
 		},
 		function(error){
 			console.log('authentication failed');

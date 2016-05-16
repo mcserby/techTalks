@@ -2,8 +2,8 @@
 	<div class="container-fluid header" ng-controller="MenuCtrl">
 		<ul class="header-nav">
 			<li><a class="" ui-sref="main.hello">Jumbo!</a></li>
-			<li ng-if="isLoggedIn()"><a class="" ui-sref="main.hello">My Projects</a></li>
-			<li ng-if="isAdmin()"><a class="" ui-sref="main.hello">Administrate</a></li>
+			<li ng-if="isLoggedIn()"><a class="" ui-sref="main.myProjects">My Projects</a></li>
+			<li ng-if="isManager()"><a class="" ui-sref="main.administrate.managedProjects">Administrate</a></li>
 		</ul>
 		<div ng-include="'/views/header/userHeader.html'"></div>
 	</div>

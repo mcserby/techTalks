@@ -5,7 +5,7 @@ angular.module('jumboClient').controller('SignUpCtrl', ['User', '$state', '$scop
 		
 	$scope.signUp = function(){
 		User.signUp($scope.user).then(function(success){
-			$state.transitionTo('main');
+			$state.transitionTo('main.hello');
 		},
 		function(error){
 			console.log(error);

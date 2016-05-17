@@ -1,7 +1,7 @@
 <div ng-controller="ManagedProjectCtrl">
 	<h3>{{project.title}}</h2>
-	<div>Members:</div>
-	<span ng-repeat="m in project.members">
+	<span>Members:</span>
+	<span style="font-weight: bolder" ng-repeat="m in project.members">
 		{{m.username}}
 	</span>
 </div>

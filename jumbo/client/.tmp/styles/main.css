@@ -42,3 +42,9 @@
     padding: 150px;
     color: #5F5F65;
 }
+
+.task-container {
+    background-color: #F5F594;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

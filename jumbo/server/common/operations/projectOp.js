@@ -45,7 +45,11 @@ module.exports.managedProjects = function(req, res, next){
 
 module.exports.myProjects = function(req, res, next){
 	Util.authorize(req, res, next, function(user, token){
-		Project.find({'members': user._id}).exec(function (err, projects) {
+		Project.find({'members': user._id}).populate({
+			path: 'tasks',
+			match: { owner: user._id },
+			select: '-project'
+		}).exec(function (err, projects) {
 			if(err){
 				console.log(err);
 				throw err;

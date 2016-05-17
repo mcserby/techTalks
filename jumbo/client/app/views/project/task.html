@@ -1,1 +1,4 @@
-{{task}}
+<div class="task-container">
+	<span style="color: blue">{{task.date | date : 'yyyy-MMM-dd'}}</span> <span style="font-weight: bolder;"> {{task.type}} </span> <span>time spent: <span style="font-weight: bolder;">{{task.toHours - task.fromHours}} hours</span></span> 
+	<p>{{task.text}}</p>
+</div>

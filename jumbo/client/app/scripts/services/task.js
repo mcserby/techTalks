@@ -22,7 +22,7 @@ angular.module('jumboClient').service('Task', ['Config', '$q', '$http', function
 			url: 'http://localhost:3000/project/'+ task.project + '/tasks',
 			data: task
 		}).then(function successCallback(response) {
-			deferred.resolve(response.data);
+			deferred.resolve(response.data.task);
 		}, 
 		function errorCallback(error) {
 			console.log(error);

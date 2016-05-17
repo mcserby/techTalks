@@ -36,7 +36,7 @@ module.exports.create = function(req, res, next){
 						throw err;
 					}
 					res.send(200, {
-						data: task
+						task: task
 					});
 					return next();
 				});

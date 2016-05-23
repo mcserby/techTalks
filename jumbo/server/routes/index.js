@@ -20,5 +20,6 @@ module.exports = function (server) {
 
 	//task
 	server.post('/project/:projectId/tasks', taskOp.create);
+	server.get('/project/:projectId/tasks', taskOp.search);
 
 };

@@ -31,4 +31,20 @@ angular.module('jumboClient').service('Task', ['Config', '$q', '$http', function
 		return deferred.promise;
 	}
 
+	this.search = function(projectId, searchString){
+		var deferred = $q.defer();
+		$http({
+			method: 'GET',
+			url: 'http://localhost:3000/project/'+ projectId + '/tasks',
+			params: {"searchString": searchString}
+		}).then(function successCallback(response) {
+			deferred.resolve(response.data.tasks);
+		}, 
+		function errorCallback(error) {
+			console.log(error);
+			deferred.reject(error);
+		});
+		return deferred.promise;
+	}
+
 }]);

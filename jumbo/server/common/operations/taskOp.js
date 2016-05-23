@@ -44,3 +44,21 @@ module.exports.create = function(req, res, next){
 		});
 	});
 }
+
+module.exports.search = function(req, res, next){
+	Util.authorize(req, res, next, function(user, token){
+		var projectId = req.params.projectId;
+		Task.find({
+			'project': projectId, 
+			'text': { "$regex": req.params.searchString}}, function (err, tasks) {
+			if(err){
+				console.log(err);
+				throw err;
+			}
+			res.send(200, {
+				tasks: tasks
+			});
+			return next();
+		});
+	});
+}

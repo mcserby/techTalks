@@ -1,9 +1,23 @@
 <div ng-controller="MyProjectCtrl">
 	<p style="font-size: 2em;"> 
 	<button class="btn btn-default glyphicon glyphicon-arrow-left" ui-sref="main.myProjects"></button>  {{project.title}}</p>
+	<hr/>
 	<div class="row">
 	<div class="col-sm-6">
-		<button class="btn btn-default" ui-sref="main.project.addTask">Add New Task</button>
+		<p><button class="btn btn-info" ui-sref="main.project.addTask">Add New Task</button> 
+		Search for tasks: 
+		<input style="display:inline; width: 15em;"
+		type="text" ng-model="taskText" placeholder="search first car..." 
+			uib-typeahead="name for name in listTasks($viewValue)" typeahead-loading="loadingTasks" 	typeahead-no-results="noResultsFound" typeahead-on-select="loadTask(taskText)" class="form-control">
+		<i ng-show="loadingTasks" class="glyphicon glyphicon-refresh"></i> 
+		<div style="margin-left: 16em;"ng-show="noResultsFound"> 
+	 	    <i class="glyphicon glyphicon-remove"></i> No Results Found 
+	 	</div></p>
+	 	<div ng-if="task != null">
+		 	<div>Search result:</div>
+		 	<div ng-include="'/views/project/task.html'"></div>
+	 	</div>
+	 	<hr/>
 		<div>My Tasks:</div>
 		<div ng-repeat="task in project.tasks">
 			<div ng-include="'/views/project/task.html'"></div>	

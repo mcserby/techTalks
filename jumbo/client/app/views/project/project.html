@@ -5,9 +5,9 @@
 	<div class="row">
 	<div class="col-sm-6">
 		<p><button class="btn btn-info" ui-sref="main.project.addTask">Add New Task</button> 
-		Search for tasks: 
+		Search for tasks:
 		<input style="display:inline; width: 15em;"
-		type="text" ng-model="taskText" placeholder="search first car..." 
+		type="text" ng-model="taskText" placeholder="search task..." 
 			uib-typeahead="name for name in listTasks($viewValue)" typeahead-loading="loadingTasks" 	typeahead-no-results="noResultsFound" typeahead-on-select="loadTask(taskText)" class="form-control">
 		<i ng-show="loadingTasks" class="glyphicon glyphicon-refresh"></i> 
 		<div style="margin-left: 16em;"ng-show="noResultsFound"> 
